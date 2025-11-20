@@ -248,6 +248,3 @@ MIT License - Feel free to use for learning and research.
 - [Efabless Caravel](https://caravel-harness.readthedocs.io/)
 
 ---
-
-**Author**: Senior ASIC Implementation Engineer  
-**Date**: 2025-11-20
