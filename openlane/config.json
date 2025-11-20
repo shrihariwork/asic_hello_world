@@ -1,0 +1,43 @@
+{
+    "DESIGN_NAME": "counter",
+    "VERILOG_FILES": "dir::../rtl/counter.v",
+    "CLOCK_PORT": "clk",
+    "CLOCK_PERIOD": 10.0,
+    
+    "_comment_clock": "Clock period in ns. 10ns = 100MHz. This drives timing analysis and optimization.",
+    
+    "FP_CORE_UTIL": 50,
+    "_comment_core_util": "Core utilization percentage (0-100). 50% means half the core area will be occupied by standard cells. Lower values give more routing space but increase die size. Typical range: 40-70%.",
+    
+    "PL_TARGET_DENSITY": 0.55,
+    "_comment_target_density": "Placement density (0.0-1.0). 0.55 means cells occupy 55% of available placement area. Must be >= FP_CORE_UTIL/100. Higher density = less whitespace = harder routing. Typical: 0.5-0.7.",
+    
+    "FP_PDN_VPITCH": 153.6,
+    "FP_PDN_HPITCH": 153.18,
+    "_comment_pdn": "Power distribution network pitch values for Sky130. These are PDK-specific and control power grid spacing.",
+    
+    "DIODE_INSERTION_STRATEGY": 3,
+    "_comment_diode": "Strategy for antenna diode insertion. 3 = insert diodes during placement to prevent antenna violations.",
+    
+    "RUN_CVC": 0,
+    "_comment_cvc": "Circuit Validity Checker. Disabled (0) for simple designs to speed up flow.",
+    
+    "SYNTH_STRATEGY": "AREA 0",
+    "_comment_synth_strategy": "Synthesis optimization strategy. 'AREA 0' balances area and timing. Options: AREA 0-3, DELAY 0-4.",
+    
+    "SYNTH_BUFFERING": 1,
+    "SYNTH_SIZING": 1,
+    "_comment_synth_opts": "Enable buffer insertion and gate sizing during synthesis for better timing.",
+    
+    "ROUTING_CORES": 4,
+    "_comment_routing_cores": "Number of CPU cores for parallel routing. Adjust based on available hardware.",
+    
+    "GLB_RT_ADJUSTMENT": 0.1,
+    "_comment_glb_rt": "Global routing adjustment factor. Positive values make routing more conservative.",
+    
+    "pdk::sky130A": {
+        "FP_CORE_UTIL": 45,
+        "PL_TARGET_DENSITY": 0.50,
+        "_comment_pdk_override": "Sky130-specific overrides. Lower utilization for this older process node."
+    }
+}
